@@ -39,15 +39,18 @@ export function Receipt({ transaction, onClose }: ReceiptProps) {
                     </p>
                 </div>
 
-                {transaction.items?.map((item, index) => (
-                    <div key={index} className="grid grid-cols-[1fr,auto,1fr] gap-4 mb-2 items-start">
-                        <div className="overflow-hidden">
-                            <div className="uppercase truncate">{item.name}</div>
+                {transaction.items?.flatMap((item, index) =>
+                    Array.from({ length: item.quantity }).map((_, quantityIndex) => (
+                        <div key={`${index}-${quantityIndex}`} className="grid grid-cols-[1fr,auto,1fr] gap-4 mb-2 items-start">
+                            <div className="overflow-hidden">
+                                <div className="uppercase truncate">{item.name}</div>
+                            </div>
+                            <div className="font-light text-gray-600">{item.reference}</div>
+                            <div className="text-right">${(item.price / item.quantity).toFixed(2)}</div>
                         </div>
-                        <div className="font-light text-gray-600">{item.reference}</div>
-                        <div className="text-right">${(item.price / item.quantity).toFixed(2)}</div>
-                    </div>
-                ))}
+                    ))
+                )}
+
 
                 <div className="border-t border-gray-200 mt-4 pt-4">
                     <div className="flex justify-between mb-2">

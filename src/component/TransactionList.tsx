@@ -38,7 +38,7 @@ const transactions: Transaction[] = [
     },
     {
         id: '3',
-        merchant: 'Best Buy',
+        merchant: 'Tresor Working Tools',
         date: 'Yesterday',
         amount: 201,
         address: '5678 Tech Ave, San Diego, CA 92102, United States',
@@ -54,7 +54,7 @@ const transactions: Transaction[] = [
     },
     {
         id: '4',
-        merchant: 'JohnsConvenience #273',
+        merchant: 'Coin Détente',
         date: '2 days ago',
         amount: 5.19,
         address: '9012 Corner St, San Diego, CA 92103, United States',

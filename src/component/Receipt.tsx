@@ -19,9 +19,9 @@ export function Receipt({ transaction, onClose }: ReceiptProps) {
             onClick={onClose}
         >
             <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.9, opacity: 0 }}
+                initial={{scale: 0.9, opacity: 0}}
+                animate={{scale: 1, opacity: 1}}
+                exit={{scale: 0.9, opacity: 0}}
                 className="bg-white rounded-t-lg p-6 max-w-md w-full font-mono text-sm relative [mask-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%2220%22 viewBox=%220%200%20100%2020%22><path d=%22M0%2020h10l5-5%205%205%205-5%205%205%205-5%205%205%205-5%205%205%205-5%205%205%205-5%205%205%205-5%205%205%205-5%205%205h10V0H0z%22 fill=%22white%22/></svg>')] [mask-position:bottom] [mask-size:100%_20px] [mask-repeat:no-repeat]"
                 onClick={e => e.stopPropagation()}
             >
@@ -29,7 +29,7 @@ export function Receipt({ transaction, onClose }: ReceiptProps) {
                     onClick={onClose}
                     className="absolute top-2 right-2 p-1 rounded-full hover:bg-gray-100"
                 >
-                    <X className="w-4 h-4" />
+                    <X className="w-4 h-4"/>
                 </button>
 
                 <div className="text-center mb-6">
@@ -70,8 +70,13 @@ export function Receipt({ transaction, onClose }: ReceiptProps) {
 
                 <div className="text-center">
                     <div className="inline-block">
-                        <div className="h-12 w-64 bg-[linear-gradient(90deg,#000_3px,transparent_3px),linear-gradient(90deg,#000_1px,transparent_1px)] bg-[length:9px_100%,3px_100%]"></div>
+                        <div
+                            className="h-12 w-64 bg-[linear-gradient(90deg,#000_3px,transparent_3px),linear-gradient(90deg,#000_1px,transparent_1px)] bg-[length:9px_100%,3px_100%]"></div>
                     </div>
+                </div>
+
+                <div className="absolute bottom-0 left-0 w-full h-4 overflow-hidden bg-black/50">
+                    <div className="sawtooth-border"></div>
                 </div>
             </motion.div>
         </motion.div>

@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import { Transaction } from '../types'
-//import { Button } from '@/components/ui/button'
 import { ChevronDown } from 'lucide-react'
 
 interface TransactionDetailsProps {
@@ -13,7 +12,7 @@ export function TransactionDetails({ transaction, onClose, onShowReceipt }: Tran
     return (
         <motion.div
             layoutId={transaction.id}
-            className="bg-white rounded-lg shadow-lg p-6 relative"
+            className="bg-white rounded-lg shadow-lg p-6 relative overflow-hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

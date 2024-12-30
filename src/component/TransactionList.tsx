@@ -79,7 +79,7 @@ export default function TransactionList() {
                 <div className="p-6">
                     <h1 className="text-2xl font-bold mb-6">Transactions</h1>
 
-                    <AnimatePresence>
+                    <AnimatePresence mode={"wait"}>
                         {!selectedId ? (
                             <motion.div className="space-y-4">
                                 {transactions.map((transaction) => (
@@ -89,9 +89,13 @@ export default function TransactionList() {
                                         onClick={() => setSelectedId(transaction.id)}
                                         className="bg-white p-4 rounded-lg shadow cursor-pointer hover:shadow-md transition-shadow"
                                         whileHover={{ scale: 1.02 }}
-                                        initial={{ opacity: 0, y: 20 }}
+                                        initial={{ opacity: 0 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0, y: -20 }}
+                                        exit={{ opacity: 0, y: 0 }}
+                                        transition={{
+                                            duration: 0.23,
+                                            ease: "easeInOut"
+                                        }}
                                     >
                                         <div className="flex justify-between items-start">
                                             <div>
